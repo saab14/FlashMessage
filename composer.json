@@ -1,0 +1,22 @@
+{   
+    "name": "saab14/flashmessage",    
+    "type": "library",
+    "description": "Flash class using sessions, written for ANAX-MVC.",
+    "keywords": ["flash", "mvc", "anax", "saab", "CFlashMessage"],
+    "homepage": "http://dbwebb.se",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "sama",
+            "email": "me@sama.com",
+            "homepage": "http://dbwebb.se"
+        }
+    ],
+    "require": {
+        "php": ">=5.4"
+    },
+    "autoload": {
+        "psr-4": { "saab\\": "src/" }
+    }
+
+}
