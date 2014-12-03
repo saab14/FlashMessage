@@ -6,7 +6,6 @@ namespace Anax\CFlashMessage;
  * Class for saving different types of flash messages in the session and 
  * displaying them to the user in different styles depending on the type. 
  * It is possible to store several messages at the same time.  
- * @author Andreas Andersson / (anaj14) / andreas@biffnet.se 
  * 
  */ 
 class CFlashMessage 
