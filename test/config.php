@@ -1,2 +1,2 @@
 <?php
-include __DIR__ . "/../src/StatusMessage/CStatusMessage_Test.php";
+include __DIR__ . "/../src/CFlashMessage/CFlashMessage_Test.php";
