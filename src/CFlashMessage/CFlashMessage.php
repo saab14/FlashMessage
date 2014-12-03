@@ -15,7 +15,7 @@ class CFlashMessage
 
     // Some settings etc 
     private $sessionVariable = 'CFlashMessage'; 
-    private $messageTypes = ['debug', 'warning', 'error', 'success']; 
+    private $messageTypes = ['info', 'warning', 'error', 'success']; 
 
     // Where all messages will be stored when class instance is created 
     private $allMessages = null; 
@@ -40,7 +40,7 @@ class CFlashMessage
      * @param type The type of message 
      * @param message The message to add 
      */ 
-    private function addMessage($type = 'debug', $message) 
+    private function addMessage($type = 'info', $message) 
     { 
         $flashMessage = ['type' => $type, 'message' => $message]; 
 

@@ -11,7 +11,7 @@ class CFlashMessage
 	//use \Anax\DI\TInjectable;
 	// Some settings etc
     private $sessionVariable = 'CFlashMessage'; 
-    private $messageTypes = ['debug', 'warning', 'error', 'success'];
+    private $messageTypes = ['info', 'warning', 'error', 'success'];
 	// Where all messages will be stored when class instance is created
 	private $allMessages = null;
 	// Variable for the anax session object
@@ -30,7 +30,7 @@ class CFlashMessage
 	 * @param type The type of message
 	 * @param message The message to add
 	 */
-	private function addMessage($type = 'debug', $message)
+	private function addMessage($type = 'info', $message)
 	{
 		$flashMessage = ['type' => $type, 'message' => $message];
 		if(is_null($this->allMessages))
@@ -41,13 +41,13 @@ class CFlashMessage
 		$this->session->set($this->sessionVariable, $this->allMessages);
 	}
 	/**
-	 * Adds a debug message to the session.
+	 * Adds a info message to the session.
 	 * 
 	 * @param message The message to add
 	 */
 	public function infoMessage($message)
 	{
-		$this->addMessage('debug', $message);
+		$this->addMessage('info', $message);
 	}
 	/**
 	 * Adds a warning message to the session.
@@ -99,19 +99,24 @@ class CFlashMessage
 	 *
 	 * @return The string with the HTML 
 	 */
-	public function messagesHtml()
-	{
-		$msgHtml = "";
-		if(is_null($this->allMessages))
-			return $msgHtml;
-		foreach ($this->allMessages as $message) {
-			$type = $message['type'];
-			$message = $message['message'];
-			$msgHtml .= "<div class='message-".$type."'>".$message."</div>";
-		}
-		$this->clearMessages();
-		return $msgHtml;
-	}
+    public function messagesHtml() 
+    { 
+        $msgHtml = ""; 
+
+        if(is_null($this->allMessages)) 
+            return $msgHtml; 
+
+        foreach ($this->allMessages as $message) { 
+            $type = $message['type']; 
+            $message = $message['message']; 
+
+            $msgHtml .= "<div class='flash_".$type."'>".$message."</div>"; 
+        } 
+
+        $this->clearMessages(); 
+
+        return $msgHtml; 
+    } 
 	/**
 	 * Checks if the $allMessages variable is set or not.
 	 * 

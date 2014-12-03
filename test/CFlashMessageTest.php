@@ -9,18 +9,18 @@ class CFlashMessageTest extends \PHPUnit_Framework_TestCase
 {
 	public function testCreateElement()
 	{
-		$flashMessageObj = new \src\CFlashMessage\CFlashMessage(new FakeSession());
+		$flashMessageObj = new \Anax\CFlashMessage\CFlashMessage(new FakeSession());
 		$res = $flashMessageObj->isEmpty();
 		$exp = true;
 		$this->assertEquals($res, $exp, "Created element created and empty.");
 	}
 	public function testAddMessages()
 	{
-		$flashMessageObj = new \src\CFlashMessage\CFlashMessage(new FakeSession());
-		$flashMessageObj->infoMessage("Debug: For your information!");
+		$flashMessageObj = new \Anax\CFlashMessage\CFlashMessage(new FakeSession());
+		$flashMessageObj->infoMessage("info: For your information!");
 		$res = $flashMessageObj->messagesHtml();
-		$exp = "<div class='flash_info'>Debug: For your information!</div>";
-		$this->assertEquals($res, $exp, "Debug message not created successfully.");
+		$exp = "<div class='flash_info'>info: For your information!</div>";
+		$this->assertEquals($res, $exp, "info message not created successfully.");
 		$flashMessageObj->clearMessages();
 		$flashMessageObj->warningMessage("Warning: May not work!");
 		$res = $flashMessageObj->messagesHtml();
@@ -40,11 +40,11 @@ class CFlashMessageTest extends \PHPUnit_Framework_TestCase
 	}
 	public function testEmpty()
 	{
-		$flashMessageObj = new \src\CFlashMessage\CFlashMessage(new FakeSession());
+		$flashMessageObj = new \Anax\CFlashMessage\CFlashMessage(new FakeSession());
 		$res = $flashMessageObj->isEmpty();
 		$exp = true;
 		$this->assertEquals($res, $exp, "Newly created object not empty.");
-		$flashMessageObj->infoMessage("Debug: For your information!");
+		$flashMessageObj->infoMessage("info: For your information!");
 		$res = $flashMessageObj->isEmpty();
 		$exp = false;
 		$this->assertEquals($res, $exp, "None empty object reported as empty.");
