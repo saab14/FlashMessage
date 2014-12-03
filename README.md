@@ -1,3 +1,7 @@
+[![Build Status](https://scrutinizer-ci.com/g/saab14/FlashMessage/badges/build.png?b=master)](https://scrutinizer-ci.com/g/saab14/FlashMessage/build-status/master)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/saab14/FlashMessage/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/saab14/FlashMessage/?branch=master)
+[![Code Coverage](https://scrutinizer-ci.com/g/saab14/FlashMessage/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/saab14/FlashMessage/?branch=master)
+
 Use in Anax
 
 Setup the controller
